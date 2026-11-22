@@ -26,6 +26,3 @@ export async function paymentsLive(): Promise<boolean> {
 }
 
 export const PARTNER_TYPES: Record<string, string> = { hospital: "Hospitals", clinic: "Clinics", doctor: "Doctors & specialists", diagnostic_centre: "Diagnostic centres", laboratory: "Laboratories", rehabilitation: "Rehabilitation providers", educator: "Healthcare educators", equipment_supplier: "Medical equipment suppliers", medical_tourism_provider: "Medical tourism service providers", ngo: "NGOs", community_organisation: "Community health organisations", sponsor: "Sponsors & supporting institutions", volunteer_professional: "Volunteers & healthcare professionals" };
-
-/** Photograph shown for a leadership card: the one uploaded in Admin > Leadership, otherwise the supplied file in /public/team. */
-export const leaderPhoto = (l: any): string | null => l.photo_url || ({ "ramesh balasubramanian": "/team/ramesh-balasubramanian.jpg", "avdhesh kumbhar": "/team/avdhesh-kumbhar.jpg" } as Record<string, string>)[String(l.name || "").toLowerCase()] || null;
