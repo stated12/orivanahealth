@@ -1,0 +1,22 @@
+import { notFound } from "next/navigation";
+import { db } from "@/lib/db";
+import { meta, funding, rupees } from "@/lib/content";
+import { SITE_URL } from "@/lib/env";
+import PageHead from "@/components/PageHead";
+import DonateButton from "@/components/DonateButton";
+export const dynamic = "force-dynamic";
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const { data } = await db().from("cases").select("public_title,public_summary").eq("public_slug", slug).in("public_state", ["approved", "closed"]).maybeSingle(); return meta(`/care/cases/${slug}`, data?.public_title || "Assistance case", data?.public_summary); }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const { data: c } = await db().from("cases").select("id,case_ref,public_title,public_summary,public_requirement,public_docs_status,verified_goal,public_state").eq("public_slug", slug).in("public_state", ["approved", "closed"]).maybeSingle(); if (!c) notFound();
+  const [f, up] = await Promise.all([funding(c.id), db().from("case_updates").select("*").eq("case_id", c.id).eq("is_published", true).order("created_at", { ascending: false })]);
+  const url = `${SITE_URL}/care/cases/${slug}`; const pct = f.goal ? Math.min(100, Math.round((f.raised / Math.max(f.goal, 1)) * 100)) : 0;
+  return (<><PageHead kicker={`Case reference ${c.case_ref}`} title={c.public_title || "Assistance case"} />
+    <div className="wrap grid gap-8 py-10 lg:grid-cols-3"><div className="space-y-8 lg:col-span-2">
+      <section className="prose-oh"><h2>Patient-approved summary</h2><p className="whitespace-pre-wrap">{c.public_summary}</p>{c.public_requirement && <><h2>Medical assistance requirement</h2><p className="whitespace-pre-wrap">{c.public_requirement}</p></>}<h2>Verification</h2><p>{c.public_docs_status || "ORIVANA has reviewed the supporting documentation for this case. Private documents are not shown publicly."}</p></section>
+      <section><h2 className="text-2xl">Updates</h2><div className="mt-3 space-y-3">{((up.data || []) as any[]).map((u) => (<div key={u.id} className="card p-4"><p className="text-xs text-muted">{new Date(u.created_at).toLocaleDateString("en-IN", { dateStyle: "medium" })}</p><h3 className="text-lg">{u.title}</h3><p className="mt-1 whitespace-pre-wrap text-sm text-muted">{u.body}</p></div>))}{!(up.data || []).length && <p className="text-sm text-muted">Updates are posted here as the case progresses.</p>}</div></section></div>
+      <aside className="space-y-4"><div className="card p-5"><h2 className="text-xl">Support this case</h2>
+        {f.goal != null ? <div className="mt-3"><div className="bar"><i style={{ width: pct + "%" }} /></div><dl className="mt-3 space-y-1 text-sm"><div className="flex justify-between"><dt className="text-muted">Verified requirement</dt><dd className="font-semibold">{rupees(f.goal)}</dd></div><div className="flex justify-between"><dt className="text-muted">Recorded contributions</dt><dd className="font-semibold">{rupees(f.raised)}</dd></div><div className="flex justify-between"><dt className="text-muted">Remaining</dt><dd className="font-semibold">{rupees(f.remaining)}</dd></div></dl><p className="mt-2 text-xs text-muted">Figures come only from verified goals and recorded transactions.</p></div> : <p className="mt-2 text-sm text-muted">A verified assistance amount has not been set for this case.</p>}
+        {c.public_state === "approved" ? <div className="mt-4"><DonateButton href={`/donate/give?case=${slug}`} label="Support this case" className="w-full" /></div> : <p className="mt-4 rounded-lg bg-soft p-3 text-sm">This case is closed.</p>}</div>
+        <div className="card p-5 text-sm"><h3 className="text-lg">Share</h3><div className="mt-2 flex flex-wrap gap-3"><a className="underline" target="_blank" rel="noopener noreferrer" href={`https://wa.me/?text=${encodeURIComponent((c.public_title || "Assistance case") + " " + url)}`}>WhatsApp</a><a className="underline" href={`mailto:?subject=${encodeURIComponent(c.public_title || "Assistance case")}&body=${encodeURIComponent(url)}`}>Email</a></div><p className="mt-2 break-all text-xs text-muted">{url}</p></div>
+        <p className="text-xs text-muted">This page shows only information approved for public sharing. ORIVANA Health does not guarantee any outcome for any case.</p></aside></div></>);
+}

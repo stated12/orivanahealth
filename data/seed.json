@@ -1,0 +1,1780 @@
+{
+"roles": [
+{
+"role": "super_admin",
+"description": "Full access",
+"name": "Super Admin",
+"is_system": true
+},
+{
+"role": "case_coordinator",
+"description": "Assistance and tourism cases, documents",
+"name": "Case Coordinator",
+"is_system": true
+},
+{
+"role": "finance",
+"description": "Donations, reconciliation, reports",
+"name": "Finance",
+"is_system": true
+},
+{
+"role": "content_manager",
+"description": "Website, directory, partners, equipment, events",
+"name": "Content Manager",
+"is_system": true
+},
+{
+"role": "training_manager",
+"description": "Courses, lessons, quizzes, learners",
+"name": "Training Manager",
+"is_system": true
+}
+],
+"role_permissions": [
+{
+"role": "super_admin",
+"permission": "*"
+},
+{
+"role": "case_coordinator",
+"permission": "dashboard.read"
+},
+{
+"role": "case_coordinator",
+"permission": "cases.read"
+},
+{
+"role": "case_coordinator",
+"permission": "cases.manage"
+},
+{
+"role": "case_coordinator",
+"permission": "documents.read"
+},
+{
+"role": "case_coordinator",
+"permission": "tourism.manage"
+},
+{
+"role": "case_coordinator",
+"permission": "notifications.read"
+},
+{
+"role": "case_coordinator",
+"permission": "forms.read"
+},
+{
+"role": "finance",
+"permission": "dashboard.read"
+},
+{
+"role": "finance",
+"permission": "donations.read"
+},
+{
+"role": "finance",
+"permission": "donations.manage"
+},
+{
+"role": "finance",
+"permission": "donations.reports"
+},
+{
+"role": "finance",
+"permission": "notifications.read"
+},
+{
+"role": "content_manager",
+"permission": "dashboard.read"
+},
+{
+"role": "content_manager",
+"permission": "content.write"
+},
+{
+"role": "content_manager",
+"permission": "directory.write"
+},
+{
+"role": "content_manager",
+"permission": "partners.write"
+},
+{
+"role": "content_manager",
+"permission": "equipment.write"
+},
+{
+"role": "content_manager",
+"permission": "events.write"
+},
+{
+"role": "content_manager",
+"permission": "media.write"
+},
+{
+"role": "content_manager",
+"permission": "forms.read"
+},
+{
+"role": "content_manager",
+"permission": "notifications.read"
+},
+{
+"role": "training_manager",
+"permission": "dashboard.read"
+},
+{
+"role": "training_manager",
+"permission": "training.write"
+},
+{
+"role": "training_manager",
+"permission": "events.write"
+},
+{
+"role": "training_manager",
+"permission": "media.write"
+},
+{
+"role": "training_manager",
+"permission": "notifications.read"
+}
+],
+"site_settings": [
+{
+"key": "brand_name",
+"value": "ORIVANA Health"
+},
+{
+"key": "brand_tagline",
+"value": "Healthcare Access. Compassion. Collaboration. Education."
+},
+{
+"key": "contact_email",
+"value": ""
+},
+{
+"key": "contact_phone",
+"value": ""
+},
+{
+"key": "contact_address",
+"value": ""
+},
+{
+"key": "legal_name",
+"value": ""
+},
+{
+"key": "registered_address",
+"value": ""
+},
+{
+"key": "social_facebook",
+"value": ""
+},
+{
+"key": "social_instagram",
+"value": ""
+},
+{
+"key": "social_x",
+"value": ""
+},
+{
+"key": "social_linkedin",
+"value": ""
+},
+{
+"key": "social_youtube",
+"value": ""
+},
+{
+"key": "payments_enabled",
+"value": false
+},
+{
+"key": "legal_eligibility_verified",
+"value": false
+},
+{
+"key": "payment_provider",
+"value": "razorpay"
+},
+{
+"key": "donation_presets",
+"value": "500,1000,2500,5000"
+},
+{
+"key": "donation_min",
+"value": "100"
+},
+{
+"key": "tax_statement",
+"value": ""
+},
+{
+"key": "fund_handling_text",
+"value": ""
+},
+{
+"key": "receipt_note",
+"value": ""
+},
+{
+"key": "case_goal_note",
+"value": ""
+},
+{
+"key": "footer_note",
+"value": "ORIVANA Health is a healthcare access and coordination initiative within the ORIVANA Global Foundation ecosystem. It is not a hospital and does not provide diagnosis or treatment."
+},
+{
+"key": "seo_default_title",
+"value": "ORIVANA Health"
+},
+{
+"key": "seo_default_description",
+"value": "Healthcare access, medical assistance coordination, medical tourism, medical training and healthcare partnerships."
+}
+],
+"case_statuses": [
+{
+"key": "submitted",
+"label": "Submitted",
+"patient_message": "We have received your application.",
+"sort_order": 1,
+"is_terminal": false
+},
+{
+"key": "received",
+"label": "Received",
+"patient_message": "Your application has been received by our team.",
+"sort_order": 2,
+"is_terminal": false
+},
+{
+"key": "documentation_required",
+"label": "Documentation Required",
+"patient_message": "Please upload the documents requested in the messages section.",
+"sort_order": 3,
+"is_terminal": false
+},
+{
+"key": "verification_in_progress",
+"label": "Verification in Progress",
+"patient_message": "Your information and documents are being verified.",
+"sort_order": 4,
+"is_terminal": false
+},
+{
+"key": "verified",
+"label": "Verified",
+"patient_message": "Your case information has been verified.",
+"sort_order": 5,
+"is_terminal": false
+},
+{
+"key": "coordinator_assigned",
+"label": "Coordinator Assigned",
+"patient_message": "A coordinator has been assigned to your case.",
+"sort_order": 6,
+"is_terminal": false
+},
+{
+"key": "provider_coordination",
+"label": "Healthcare Provider Coordination",
+"patient_message": "We are coordinating with participating healthcare providers.",
+"sort_order": 7,
+"is_terminal": false
+},
+{
+"key": "support_exploration",
+"label": "Support Exploration",
+"patient_message": "We are exploring possible pathways of support. This does not guarantee assistance.",
+"sort_order": 8,
+"is_terminal": false
+},
+{
+"key": "assistance_under_review",
+"label": "Assistance Under Review",
+"patient_message": "Your case is being reviewed for possible assistance. No outcome is guaranteed.",
+"sort_order": 9,
+"is_terminal": false
+},
+{
+"key": "support_identified",
+"label": "Support Identified",
+"patient_message": "A possible pathway of support has been identified. Your coordinator will contact you.",
+"sort_order": 10,
+"is_terminal": false
+},
+{
+"key": "treatment_coordination",
+"label": "Treatment Coordination",
+"patient_message": "We are coordinating the next steps with the healthcare provider.",
+"sort_order": 11,
+"is_terminal": false
+},
+{
+"key": "follow_up",
+"label": "Follow-up",
+"patient_message": "We are following up on your case.",
+"sort_order": 12,
+"is_terminal": false
+},
+{
+"key": "completed",
+"label": "Completed",
+"patient_message": "Your case has been completed.",
+"sort_order": 13,
+"is_terminal": true
+},
+{
+"key": "declined",
+"label": "Declined",
+"patient_message": "We are unable to take this case forward. Your coordinator can explain why.",
+"sort_order": 14,
+"is_terminal": true
+},
+{
+"key": "closed",
+"label": "Closed",
+"patient_message": "This case is closed.",
+"sort_order": 15,
+"is_terminal": true
+}
+],
+"specialty_groups": [
+{
+"name": "Heart, Brain & Spine",
+"slug": "heart-brain-spine",
+"sort_order": 1
+},
+{
+"name": "Bones, Joints & Rehabilitation",
+"slug": "bones-joints-rehabilitation",
+"sort_order": 2
+},
+{
+"name": "Kidney & Urinary Care",
+"slug": "kidney-urinary-care",
+"sort_order": 3
+},
+{
+"name": "Digestive Health",
+"slug": "digestive-health",
+"sort_order": 4
+},
+{
+"name": "Women, Children & Newborn Care",
+"slug": "women-children-newborn-care",
+"sort_order": 5
+},
+{
+"name": "Mind & Skin",
+"slug": "mind-skin",
+"sort_order": 6
+},
+{
+"name": "Surgical Care",
+"slug": "surgical-care",
+"sort_order": 7
+},
+{
+"name": "General & Elderly Care",
+"slug": "general-elderly-care",
+"sort_order": 8
+},
+{
+"name": "Cancer Care",
+"slug": "cancer-care",
+"sort_order": 9
+},
+{
+"name": "Emergency & Critical Care",
+"slug": "emergency-critical-care",
+"sort_order": 10
+},
+{
+"name": "Diagnostics",
+"slug": "diagnostics",
+"sort_order": 11
+},
+{
+"name": "Dental, ENT & Supportive Care",
+"slug": "dental-ent-supportive-care",
+"sort_order": 12
+}
+],
+"specialties": [
+{
+"_group": "heart-brain-spine",
+"name": "Cardiology",
+"slug": "cardiology",
+"summary": "Information and enquiries related to the heart and blood vessels, including blood pressure, heart rhythm, chest discomfort and circulation concerns.",
+"overview": "<p>Cardiology relates to the heart and blood vessels, including blood pressure, heart rhythm, chest discomfort and circulation concerns.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for cardiology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 1
+},
+{
+"_group": "heart-brain-spine",
+"name": "Neuroscience",
+"slug": "neuroscience",
+"summary": "Information and enquiries related to the brain, nerves and nervous system, including headaches, seizures, stroke-related care and nerve conditions.",
+"overview": "<p>Neuroscience relates to the brain, nerves and nervous system, including headaches, seizures, stroke-related care and nerve conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for neuroscience care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 2
+},
+{
+"_group": "heart-brain-spine",
+"name": "Spine Surgery",
+"slug": "spine-surgery",
+"summary": "Information and enquiries related to the spine and spinal nerves, including back and neck pain and spinal injuries.",
+"overview": "<p>Spine Surgery relates to the spine and spinal nerves, including back and neck pain and spinal injuries.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for spine surgery care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 3
+},
+{
+"_group": "bones-joints-rehabilitation",
+"name": "Orthopaedics",
+"slug": "orthopaedics",
+"summary": "Information and enquiries related to bones, joints, muscles and ligaments, including fractures, joint pain, sports injuries and joint replacement.",
+"overview": "<p>Orthopaedics relates to bones, joints, muscles and ligaments, including fractures, joint pain, sports injuries and joint replacement.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for orthopaedics care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 4
+},
+{
+"_group": "bones-joints-rehabilitation",
+"name": "Physiotherapy & Rehabilitation",
+"slug": "physiotherapy-rehabilitation",
+"summary": "Information and enquiries related to recovery of movement and function after injury, surgery, illness or long-term conditions.",
+"overview": "<p>Physiotherapy & Rehabilitation relates to recovery of movement and function after injury, surgery, illness or long-term conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for physiotherapy & rehabilitation care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 5
+},
+{
+"_group": "kidney-urinary-care",
+"name": "Nephrology",
+"slug": "nephrology",
+"summary": "Information and enquiries related to kidney health, including chronic kidney disease, dialysis and fluid and electrolyte balance.",
+"overview": "<p>Nephrology relates to kidney health, including chronic kidney disease, dialysis and fluid and electrolyte balance.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for nephrology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 6
+},
+{
+"_group": "kidney-urinary-care",
+"name": "Renal Transplant",
+"slug": "renal-transplant",
+"summary": "Information and enquiries related to kidney transplantation, including assessment, donor and recipient coordination and follow-up care.",
+"overview": "<p>Renal Transplant relates to kidney transplantation, including assessment, donor and recipient coordination and follow-up care.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for renal transplant care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 7
+},
+{
+"_group": "kidney-urinary-care",
+"name": "Urology",
+"slug": "urology",
+"summary": "Information and enquiries related to the urinary tract and male reproductive system, including stones, infections and prostate conditions.",
+"overview": "<p>Urology relates to the urinary tract and male reproductive system, including stones, infections and prostate conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for urology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 8
+},
+{
+"_group": "digestive-health",
+"name": "Gastroenterology",
+"slug": "gastroenterology",
+"summary": "Information and enquiries related to the digestive system and liver, including stomach, bowel, gallbladder and liver conditions.",
+"overview": "<p>Gastroenterology relates to the digestive system and liver, including stomach, bowel, gallbladder and liver conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for gastroenterology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 9
+},
+{
+"_group": "digestive-health",
+"name": "GI Surgery",
+"slug": "gi-surgery",
+"summary": "Information and enquiries related to surgical care of the digestive tract, liver, pancreas and abdominal wall.",
+"overview": "<p>GI Surgery relates to surgical care of the digestive tract, liver, pancreas and abdominal wall.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for gi surgery care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 10
+},
+{
+"_group": "women-children-newborn-care",
+"name": "Obstetrics & Gynaecology",
+"slug": "obstetrics-gynaecology",
+"summary": "Information and enquiries related to pregnancy, childbirth and women's reproductive health.",
+"overview": "<p>Obstetrics & Gynaecology relates to pregnancy, childbirth and women's reproductive health.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for obstetrics & gynaecology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 11
+},
+{
+"_group": "women-children-newborn-care",
+"name": "Paediatrics",
+"slug": "paediatrics",
+"summary": "Information and enquiries related to the health of infants, children and adolescents, including growth, vaccination and childhood illness.",
+"overview": "<p>Paediatrics relates to the health of infants, children and adolescents, including growth, vaccination and childhood illness.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for paediatrics care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 12
+},
+{
+"_group": "women-children-newborn-care",
+"name": "Neonatology",
+"slug": "neonatology",
+"summary": "Information and enquiries related to the care of newborn babies, including premature and unwell newborns.",
+"overview": "<p>Neonatology relates to the care of newborn babies, including premature and unwell newborns.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for neonatology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 13
+},
+{
+"_group": "mind-skin",
+"name": "Psychiatry & Mental Health",
+"slug": "psychiatry-mental-health",
+"summary": "Information and enquiries related to mental health and emotional wellbeing, including anxiety, depression and other mental health conditions.",
+"overview": "<p>Psychiatry & Mental Health relates to mental health and emotional wellbeing, including anxiety, depression and other mental health conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for psychiatry & mental health care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 14
+},
+{
+"_group": "mind-skin",
+"name": "Dermatology",
+"slug": "dermatology",
+"summary": "Information and enquiries related to the skin, hair and nails, including rashes, infections, allergies and chronic skin conditions.",
+"overview": "<p>Dermatology relates to the skin, hair and nails, including rashes, infections, allergies and chronic skin conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for dermatology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 15
+},
+{
+"_group": "surgical-care",
+"name": "Plastic & Reconstructive Surgery",
+"slug": "plastic-reconstructive-surgery",
+"summary": "Information and enquiries related to reconstruction and repair after injury, burns, cancer surgery or congenital conditions.",
+"overview": "<p>Plastic & Reconstructive Surgery relates to reconstruction and repair after injury, burns, cancer surgery or congenital conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for plastic & reconstructive surgery care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 16
+},
+{
+"_group": "surgical-care",
+"name": "General Surgery",
+"slug": "general-surgery",
+"summary": "Information and enquiries related to common surgical conditions of the abdomen, hernias, soft tissue and day-care procedures.",
+"overview": "<p>General Surgery relates to common surgical conditions of the abdomen, hernias, soft tissue and day-care procedures.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for general surgery care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 17
+},
+{
+"_group": "general-elderly-care",
+"name": "Internal Medicine",
+"slug": "internal-medicine",
+"summary": "Information and enquiries related to adult medical conditions, including diabetes, infections, thyroid and long-term conditions.",
+"overview": "<p>Internal Medicine relates to adult medical conditions, including diabetes, infections, thyroid and long-term conditions.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for internal medicine care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 18
+},
+{
+"_group": "general-elderly-care",
+"name": "Geriatric Medicine",
+"slug": "geriatric-medicine",
+"summary": "Information and enquiries related to the health needs of older adults, including multiple conditions, mobility and medication review.",
+"overview": "<p>Geriatric Medicine relates to the health needs of older adults, including multiple conditions, mobility and medication review.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for geriatric medicine care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 19
+},
+{
+"_group": "cancer-care",
+"name": "Oncology",
+"slug": "oncology",
+"summary": "Information and enquiries related to cancer care, including assessment, treatment planning, chemotherapy, radiation and follow-up.",
+"overview": "<p>Oncology relates to cancer care, including assessment, treatment planning, chemotherapy, radiation and follow-up.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for oncology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 20
+},
+{
+"_group": "emergency-critical-care",
+"name": "Emergency Services",
+"slug": "emergency-services",
+"summary": "Information and enquiries related to urgent and emergency care for sudden illness and injury.",
+"overview": "<p>Emergency Services relates to urgent and emergency care for sudden illness and injury.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for emergency services care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 21
+},
+{
+"_group": "emergency-critical-care",
+"name": "Critical Care",
+"slug": "critical-care",
+"summary": "Information and enquiries related to intensive care for seriously ill patients who need close monitoring and support.",
+"overview": "<p>Critical Care relates to intensive care for seriously ill patients who need close monitoring and support.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for critical care care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 22
+},
+{
+"_group": "diagnostics",
+"name": "Laboratory Services",
+"slug": "laboratory-services",
+"summary": "Information and enquiries related to blood, urine and other laboratory tests that support diagnosis and monitoring.",
+"overview": "<p>Laboratory Services relates to blood, urine and other laboratory tests that support diagnosis and monitoring.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for laboratory services care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 23
+},
+{
+"_group": "diagnostics",
+"name": "Radiology & Imaging",
+"slug": "radiology-imaging",
+"summary": "Information and enquiries related to X-ray, ultrasound, CT, MRI and other imaging used for diagnosis and treatment planning.",
+"overview": "<p>Radiology & Imaging relates to X-ray, ultrasound, CT, MRI and other imaging used for diagnosis and treatment planning.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for radiology & imaging care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 24
+},
+{
+"_group": "dental-ent-supportive-care",
+"name": "Dentistry",
+"slug": "dentistry",
+"summary": "Information and enquiries related to teeth, gums and oral health.",
+"overview": "<p>Dentistry relates to teeth, gums and oral health.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for dentistry care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 25
+},
+{
+"_group": "dental-ent-supportive-care",
+"name": "ENT",
+"slug": "ent",
+"summary": "Information and enquiries related to the ear, nose and throat, including hearing, sinus and voice concerns.",
+"overview": "<p>ENT relates to the ear, nose and throat, including hearing, sinus and voice concerns.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for ent care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 26
+},
+{
+"_group": "dental-ent-supportive-care",
+"name": "Anaesthesiology",
+"slug": "anaesthesiology",
+"summary": "Information and enquiries related to anaesthesia and pain management before, during and after procedures.",
+"overview": "<p>Anaesthesiology relates to anaesthesia and pain management before, during and after procedures.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for anaesthesiology care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 27
+},
+{
+"_group": "dental-ent-supportive-care",
+"name": "Nutrition",
+"slug": "nutrition",
+"summary": "Information and enquiries related to diet and nutrition support, including dietary planning during illness and recovery.",
+"overview": "<p>Nutrition relates to diet and nutrition support, including dietary planning during illness and recovery.</p><p>This page helps you understand how to reach healthcare providers and services connected to this specialty through ORIVANA Health. Providers, hospitals and services are listed here only after they have been added and verified by ORIVANA.</p>",
+"addresses": "<p>People usually look for nutrition care when they need an assessment, a second opinion, ongoing treatment or help finding the right provider. Only a qualified, licensed doctor can say what you need.</p>",
+"navigation_info": "<p>Use the enquiry form on this page to tell us what you are looking for. Our team can help you with the administrative next step: finding participating providers, organising your records and arranging contact. ORIVANA Health does not diagnose or recommend treatment.</p>",
+"sort_order": 28
+}
+],
+"journey_steps": [
+{
+"title": "Patient inquiry",
+"sort_order": 1
+},
+{
+"title": "Secure medical document submission",
+"sort_order": 2
+},
+{
+"title": "Case administrative review",
+"sort_order": 3
+},
+{
+"title": "Specialty identification",
+"sort_order": 4
+},
+{
+"title": "Provider coordination",
+"sort_order": 5
+},
+{
+"title": "Medical review by participating healthcare provider",
+"sort_order": 6
+},
+{
+"title": "Treatment proposal or estimate from provider",
+"sort_order": 7
+},
+{
+"title": "Patient choice",
+"sort_order": 8
+},
+{
+"title": "Appointment coordination",
+"sort_order": 9
+},
+{
+"title": "Visa documentation guidance",
+"sort_order": 10
+},
+{
+"title": "Travel coordination",
+"sort_order": 11
+},
+{
+"title": "Accommodation partner coordination",
+"sort_order": 12
+},
+{
+"title": "Interpreter coordination",
+"sort_order": 13
+},
+{
+"title": "Hospital arrival coordination",
+"sort_order": 14
+},
+{
+"title": "Treatment journey coordination",
+"sort_order": 15
+},
+{
+"title": "Discharge coordination",
+"sort_order": 16
+},
+{
+"title": "Follow-up and recovery coordination",
+"sort_order": 17
+}
+],
+"tourism_services": [
+{
+"name": "Hospital inquiry coordination",
+"sort_order": 1
+},
+{
+"name": "Specialist inquiry coordination",
+"sort_order": 2
+},
+{
+"name": "Appointment coordination",
+"sort_order": 3
+},
+{
+"name": "Medical record preparation",
+"sort_order": 4
+},
+{
+"name": "Provider estimate coordination",
+"sort_order": 5
+},
+{
+"name": "Medical visa documentation checklist",
+"sort_order": 6
+},
+{
+"name": "Travel information",
+"sort_order": 7
+},
+{
+"name": "Airport transfer partner referral",
+"sort_order": 8
+},
+{
+"name": "Accommodation partner referral",
+"sort_order": 9
+},
+{
+"name": "Interpreter coordination",
+"sort_order": 10
+},
+{
+"name": "Patient companion information",
+"sort_order": 11
+},
+{
+"name": "Follow-up coordination",
+"sort_order": 12
+}
+],
+"course_categories": [
+{
+"name": "Healthcare Administration",
+"slug": "healthcare-administration",
+"sort_order": 1
+},
+{
+"name": "Hospital Operations",
+"slug": "hospital-operations",
+"sort_order": 2
+},
+{
+"name": "Patient Safety",
+"slug": "patient-safety",
+"sort_order": 3
+},
+{
+"name": "Healthcare Communication",
+"slug": "healthcare-communication",
+"sort_order": 4
+},
+{
+"name": "Healthcare Technology",
+"slug": "healthcare-technology",
+"sort_order": 5
+},
+{
+"name": "Healthcare Awareness",
+"slug": "healthcare-awareness",
+"sort_order": 6
+},
+{
+"name": "Community Health",
+"slug": "community-health",
+"sort_order": 7
+},
+{
+"name": "Patient Care Education",
+"slug": "patient-care-education",
+"sort_order": 8
+},
+{
+"name": "Healthcare Leadership",
+"slug": "healthcare-leadership",
+"sort_order": 9
+},
+{
+"name": "Medical Tourism Operations",
+"slug": "medical-tourism-operations",
+"sort_order": 10
+},
+{
+"name": "Rehabilitation Education",
+"slug": "rehabilitation-education",
+"sort_order": 11
+},
+{
+"name": "Healthcare Support Systems",
+"slug": "healthcare-support-systems",
+"sort_order": 12
+}
+],
+"equipment_categories": [
+{
+"name": "Diagnostic & Imaging Equipment",
+"slug": "diagnostic-imaging-equipment",
+"sort_order": 1
+},
+{
+"name": "Patient Monitoring Equipment",
+"slug": "patient-monitoring-equipment",
+"sort_order": 2
+},
+{
+"name": "ICU & Critical Care Equipment",
+"slug": "icu-critical-care-equipment",
+"sort_order": 3
+},
+{
+"name": "Surgical & Operating Theatre Equipment",
+"slug": "surgical-operating-theatre-equipment",
+"sort_order": 4
+},
+{
+"name": "Laboratory Equipment",
+"slug": "laboratory-equipment",
+"sort_order": 5
+},
+{
+"name": "Rehabilitation & Physiotherapy Equipment",
+"slug": "rehabilitation-physiotherapy-equipment",
+"sort_order": 6
+},
+{
+"name": "Home Healthcare Equipment",
+"slug": "home-healthcare-equipment",
+"sort_order": 7
+},
+{
+"name": "Mobility & Accessibility Equipment",
+"slug": "mobility-accessibility-equipment",
+"sort_order": 8
+},
+{
+"name": "Dental Equipment",
+"slug": "dental-equipment",
+"sort_order": 9
+},
+{
+"name": "Maternal & Neonatal Equipment",
+"slug": "maternal-neonatal-equipment",
+"sort_order": 10
+},
+{
+"name": "Emergency & Ambulance Equipment",
+"slug": "emergency-ambulance-equipment",
+"sort_order": 11
+},
+{
+"name": "Medical Consumables & Supplies",
+"slug": "medical-consumables-supplies",
+"sort_order": 12
+}
+],
+"equipment_services": [
+{
+"name": "Maintenance",
+"sort_order": 1
+},
+{
+"name": "Servicing",
+"sort_order": 2
+},
+{
+"name": "Repair",
+"sort_order": 3
+},
+{
+"name": "Procurement support",
+"sort_order": 4
+},
+{
+"name": "Sourcing support",
+"sort_order": 5
+},
+{
+"name": "Supplier referrals",
+"sort_order": 6
+},
+{
+"name": "Installation enquiries",
+"sort_order": 7
+},
+{
+"name": "Training enquiries",
+"sort_order": 8
+}
+],
+"navigator_options": [
+{
+"label": "I need help finding healthcare",
+"description": "Browse specialties and providers, or tell us what you are looking for.",
+"href": "/healthcare",
+"sort_order": 1
+},
+{
+"label": "I need financial assistance",
+"description": "Apply for help organising medical information and exploring support.",
+"href": "/care/apply",
+"sort_order": 2
+},
+{
+"label": "I am seeking treatment in India",
+"description": "Start an international patient enquiry.",
+"href": "/medical-tourism/enquiry",
+"sort_order": 3
+},
+{
+"label": "I want to explore a specialist",
+"description": "Browse specialties and the providers listed under them.",
+"href": "/healthcare",
+"sort_order": 4
+},
+{
+"label": "I need diagnostic services",
+"description": "Laboratory and imaging information.",
+"href": "/healthcare/laboratory-services",
+"sort_order": 5
+},
+{
+"label": "I need rehabilitation",
+"description": "Physiotherapy and rehabilitation information.",
+"href": "/healthcare/physiotherapy-rehabilitation",
+"sort_order": 6
+},
+{
+"label": "I am looking for healthcare equipment",
+"description": "Browse equipment categories or send an enquiry.",
+"href": "/equipment",
+"sort_order": 7
+},
+{
+"label": "I want healthcare training",
+"description": "Browse courses, workshops and programmes.",
+"href": "/training",
+"sort_order": 8
+},
+{
+"label": "I represent a healthcare institution",
+"description": "Partner with ORIVANA Health.",
+"href": "/partners/apply",
+"sort_order": 9
+},
+{
+"label": "I want to support a healthcare initiative",
+"description": "Donate for the Needy and other ways to support.",
+"href": "/donate",
+"sort_order": 10
+}
+],
+"navigation_items": [
+{
+"location": "header",
+"label": "Find Healthcare",
+"href": "/healthcare",
+"sort_order": 1
+},
+{
+"location": "header",
+"label": "ORIVANA Care",
+"href": "/care",
+"sort_order": 2
+},
+{
+"location": "header",
+"label": "Medical Tourism",
+"href": "/medical-tourism",
+"sort_order": 3
+},
+{
+"location": "header",
+"label": "Training",
+"href": "/training",
+"sort_order": 4
+},
+{
+"location": "header",
+"label": "Equipment",
+"href": "/equipment",
+"sort_order": 5
+},
+{
+"location": "header",
+"label": "Partners",
+"href": "/partners",
+"sort_order": 6
+},
+{
+"location": "header",
+"label": "Community Health",
+"href": "/community",
+"sort_order": 7
+},
+{
+"location": "header",
+"label": "About",
+"href": "/about",
+"sort_order": 8
+},
+{
+"location": "footer",
+"label": "About",
+"href": "/about",
+"sort_order": 1
+},
+{
+"location": "footer",
+"label": "Find Healthcare",
+"href": "/healthcare",
+"sort_order": 2
+},
+{
+"location": "footer",
+"label": "ORIVANA Care",
+"href": "/care",
+"sort_order": 3
+},
+{
+"location": "footer",
+"label": "Donate for the Needy",
+"href": "/donate",
+"sort_order": 4
+},
+{
+"location": "footer",
+"label": "Medical Tourism",
+"href": "/medical-tourism",
+"sort_order": 5
+},
+{
+"location": "footer",
+"label": "Training",
+"href": "/training",
+"sort_order": 6
+},
+{
+"location": "footer",
+"label": "Equipment",
+"href": "/equipment",
+"sort_order": 7
+},
+{
+"location": "footer",
+"label": "Partners",
+"href": "/partners",
+"sort_order": 8
+},
+{
+"location": "footer",
+"label": "Community Health",
+"href": "/community",
+"sort_order": 9
+},
+{
+"location": "footer",
+"label": "Health Navigator",
+"href": "/navigator",
+"sort_order": 10
+},
+{
+"location": "footer",
+"label": "Contact",
+"href": "/contact",
+"sort_order": 11
+},
+{
+"location": "footer",
+"label": "FAQs",
+"href": "/faqs",
+"sort_order": 12
+},
+{
+"location": "footer",
+"label": "Privacy",
+"href": "/page/privacy-policy",
+"sort_order": 13
+},
+{
+"location": "footer",
+"label": "Terms",
+"href": "/page/terms",
+"sort_order": 14
+},
+{
+"location": "footer",
+"label": "Medical disclaimer",
+"href": "/page/medical-disclaimer",
+"sort_order": 15
+}
+],
+"leaders": [
+{
+"name": "Ramesh Balasubramanian",
+"title": "Founder, Director & Investor — Curis Hospitals India",
+"relationship": "Leadership and guidance",
+"bio": "Ramesh Balasubramanian is the Founder, Director & Investor associated with Curis Hospitals India, bringing healthcare leadership, institutional experience, healthcare operations and hospital ecosystem perspectives to the development of ORIVANA Health.",
+"sort_order": 1
+},
+{
+"name": "Avdhesh Kumbhar",
+"title": "Founder & Director — ORIVANA Global Foundation",
+"relationship": "Founding leadership",
+"bio": "Avdhesh Kumbhar is the Founder & Director of ORIVANA Global Foundation, leading the development of collaborative initiatives connecting people, institutions, knowledge, resources and opportunities across healthcare, education, humanity and social development.",
+"sort_order": 2
+}
+],
+"forms": [
+{
+"key": "contact",
+"title": "Contact ORIVANA Health",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "healthcare_enquiry",
+"title": "Tell us what healthcare you are looking for",
+"description": "We will help with the administrative next step. We do not diagnose or recommend treatment.",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "city",
+"label": "City",
+"type": "text",
+"required": false
+},
+{
+"name": "specialty",
+"label": "Specialty or service of interest",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "specialty_enquiry",
+"title": "Enquire about this specialty",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "specialty",
+"label": "Specialty",
+"type": "text",
+"required": false
+},
+{
+"name": "city",
+"label": "City",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "partner_application",
+"title": "Partnership application",
+"description": "Tell us about your organisation. Partners are listed publicly only after ORIVANA verifies them.",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Organisation name",
+"type": "text",
+"required": true
+},
+{
+"name": "partner_type",
+"label": "Type (hospital, clinic, laboratory, NGO, educator, supplier, etc.)",
+"type": "text",
+"required": true
+},
+{
+"name": "city",
+"label": "City and country",
+"type": "text",
+"required": false
+},
+{
+"name": "website",
+"label": "Website",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "supplier_registration",
+"title": "Supplier registration",
+"description": "Suppliers are listed only after review and verification.",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Company name",
+"type": "text",
+"required": true
+},
+{
+"name": "categories",
+"label": "Equipment categories supplied",
+"type": "text",
+"required": true
+},
+{
+"name": "website",
+"label": "Website",
+"type": "text",
+"required": false
+},
+{
+"name": "city",
+"label": "City and country",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "equipment_enquiry",
+"title": "Equipment enquiry or request for quotation",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Hospital, clinic or organisation (if any)",
+"type": "text",
+"required": false
+},
+{
+"name": "equipment",
+"label": "Equipment or supplies needed",
+"type": "text",
+"required": true
+},
+{
+"name": "quantity",
+"label": "Quantity",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "equipment_service_enquiry",
+"title": "Servicing, repair or sourcing enquiry",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Organisation (if any)",
+"type": "text",
+"required": false
+},
+{
+"name": "service",
+"label": "Service needed",
+"type": "text",
+"required": true
+},
+{
+"name": "equipment",
+"label": "Equipment concerned",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "institutional_support",
+"title": "Institutional sponsorship and partnership",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Organisation",
+"type": "text",
+"required": true
+},
+{
+"name": "support_type",
+"label": "How would you like to support?",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "training_enquiry",
+"title": "Training enquiry",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Organisation (if any)",
+"type": "text",
+"required": false
+},
+{
+"name": "interest",
+"label": "Programme or subject of interest",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "volunteer_registration",
+"title": "Volunteer registration",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "city",
+"label": "City",
+"type": "text",
+"required": false
+},
+{
+"name": "skills",
+"label": "Profession or skills",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "community_partner",
+"title": "Community partner onboarding",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "organisation",
+"label": "Organisation",
+"type": "text",
+"required": true
+},
+{
+"name": "city",
+"label": "City",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+},
+{
+"key": "general_enquiry",
+"title": "General enquiry",
+"description": "",
+"fields": [
+{
+"name": "name",
+"label": "Full name",
+"type": "text",
+"required": true
+},
+{
+"name": "email",
+"label": "Email",
+"type": "email",
+"required": true
+},
+{
+"name": "phone",
+"label": "Contact number",
+"type": "text",
+"required": false
+},
+{
+"name": "message",
+"label": "Your message",
+"type": "textarea",
+"required": true
+}
+],
+"success_message": "Thank you. Your request has been received and our team will respond."
+}
+],
+"pages": [
+{
+"slug": "medical-disclaimer",
+"title": "Medical disclaimer",
+"body": "<p>ORIVANA Health is a healthcare access and coordination initiative. It is not a hospital, clinic or diagnostic service, and nothing on this website is medical advice, a diagnosis or a recommendation for treatment. Medical decisions must be made with qualified and licensed healthcare professionals.</p><p><strong>In an emergency, contact your local emergency number or go to the nearest emergency department immediately.</strong> Do not use this website for emergencies.</p><p>ORIVANA Health does not promise treatment, financial assistance, visas, admission, travel arrangements or any medical outcome.</p>"
+},
+{
+"slug": "privacy-policy",
+"title": "Privacy policy",
+"body": "<p>ORIVANA Health collects only the information needed to respond to your request, coordinate your case or provide your account. Medical records you upload are stored in a private store, are visible only to authorised ORIVANA staff who need them, and are never published. A case is shown publicly only if it has been verified, you have given separate consent for public sharing, and an administrator has approved the specific wording.</p><p>We use your contact details to reply to you and, if you consented, to send updates about your case. We do not sell personal data. You may ask us to correct or delete your information by writing to us through the contact page; some records may need to be kept where the law requires.</p><p>Payment card details are never stored by ORIVANA. Where online payments are enabled they are handled by a regulated payment provider.</p><p>This policy should be reviewed by ORIVANA's legal adviser and the contact and organisation details completed in Admin → Settings.</p>"
+},
+{
+"slug": "terms",
+"title": "Terms of use",
+"body": "<p>By using this website you agree to use it lawfully and to give information that is true and complete to the best of your knowledge. ORIVANA Health coordinates information and connections; it does not provide medical services and does not guarantee any outcome, assistance, treatment, admission, visa or travel arrangement.</p><p>Content on this site is for general information only. Listings of partners, providers and equipment reflect information supplied to and verified by ORIVANA at the time of listing, and the verification status shown is the status recorded by ORIVANA.</p>"
+}
+],
+"faqs": [
+{
+"question": "Is ORIVANA Health a hospital?",
+"answer": "No. ORIVANA Health helps people navigate healthcare, connect with participating providers, and explore pathways of support. It does not diagnose or treat.",
+"sort_order": 1
+},
+{
+"question": "Does applying for medical assistance guarantee help?",
+"answer": "No. We help organise your information and explore possible pathways. We cannot promise treatment, funding or any outcome.",
+"sort_order": 2
+},
+{
+"question": "Will my case be made public?",
+"answer": "Never automatically. A case can appear publicly only if it is verified, you give separate consent for public sharing, and an administrator approves the exact wording. Medical records are never published.",
+"sort_order": 3
+},
+{
+"question": "Can I track my application?",
+"answer": "Yes. After you apply you receive a case ID and a private access code. Use them on the case tracking page to see status, messages and to upload documents.",
+"sort_order": 4
+},
+{
+"question": "Does ORIVANA arrange visas for international patients?",
+"answer": "No. We can share general documentation checklists and coordinate with participating providers, but we do not give immigration advice and cannot guarantee a visa.",
+"sort_order": 5
+},
+{
+"question": "Are online donations active?",
+"answer": "Online contributions are switched on only after a payment provider is configured and ORIVANA's legal eligibility to receive them is confirmed. The Donate for the Needy page always shows the current position.",
+"sort_order": 6
+}
+]
+}

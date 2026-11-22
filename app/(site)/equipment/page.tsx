@@ -1,0 +1,20 @@
+import Link from "next/link";
+import { db } from "@/lib/db";
+import { meta } from "@/lib/content";
+import PageHead from "@/components/PageHead";
+import Slot from "@/components/Slot";
+import FormBox from "@/components/FormBox";
+export const dynamic = "force-dynamic";
+export async function generateMetadata() { return meta("/equipment", "Medical equipment discovery and enquiries"); }
+export default async function Page({ searchParams }: { searchParams: Promise<{ category?: string; q?: string; sent?: string }> }) {
+  const sp = await searchParams; const [cats, ls, svc] = await Promise.all([db().from("equipment_categories").select("id,name,slug,description").eq("is_active", true).order("sort_order"), db().from("equipment_listings").select("*").eq("is_published", true).order("created_at", { ascending: false }), db().from("equipment_services").select("*").eq("is_published", true).order("sort_order")]);
+  const categories = (cats.data || []) as any[]; const cat = categories.find((c) => c.slug === sp.category);
+  const list = ((ls.data || []) as any[]).filter((l) => (!cat || l.category_id === cat.id) && (!sp.q || (l.name + " " + (l.manufacturer || "")).toLowerCase().includes(sp.q.toLowerCase())));
+  return (<><PageHead kicker="Medical equipment" title="Equipment discovery and procurement enquiries" intro="Browse equipment categories, request information or a quotation, and ask about sourcing, servicing, repair and maintenance. ORIVANA Health is a verified discovery and enquiry platform, not an online shop." />
+    <div className="wrap py-10"><form className="flex max-w-xl gap-2" role="search"><input name="q" defaultValue={sp.q || ""} className="input" aria-label="Search equipment" />{sp.category && <input type="hidden" name="category" value={sp.category} />}<button className="btn btn-dark">Search</button></form>
+      <div className="mt-5 flex flex-wrap gap-2"><Link href="/equipment" className={`badge ${!cat ? "" : "badge-grey"}`}>All categories</Link>{categories.map((c) => <Link key={c.id} href={`/equipment?category=${c.slug}`} className={`badge ${cat?.id === c.id ? "" : "badge-grey"}`}>{c.name}</Link>)}</div>
+      {list.length ? <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{list.map((l) => (<Link key={l.id} href={`/equipment/${l.slug}`} className="card card-hover overflow-hidden"><Slot src={l.image_url} icon="tool" className="aspect-[4/3] !rounded-none" light /><div className="p-4">{l.is_verified && <span className="badge badge-green">Verified listing</span>}<h2 className="mt-1 text-lg">{l.name}</h2>{l.manufacturer && <p className="text-sm text-muted">{l.manufacturer}</p>}</div></Link>))}</div>
+        : <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{(cat ? [cat] : categories).map((c) => <div key={c.id} className="card p-5"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-mint text-green-dark"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z" /></svg></span><h2 className="mt-3 text-lg">{c.name}</h2><p className="mt-1 text-sm text-muted">Send an enquiry and we will connect you with verified suppliers.</p></div>)}</div>}
+      <section className="mt-12"><h2 className="text-2xl">Equipment services</h2><div className="mt-3 flex flex-wrap gap-2">{((svc.data || []) as any[]).map((s) => <span key={s.id} className="badge badge-grey !text-xs">{s.name}</span>)}</div></section>
+      <div className="mt-10 grid gap-6 lg:grid-cols-2"><FormBox formKey="equipment_enquiry" ret="/equipment" sent={sp.sent} cta="Send enquiry" /><div className="space-y-6"><FormBox formKey="equipment_service_enquiry" ret="/equipment" sent={sp.sent} cta="Send enquiry" /><div className="card p-5"><h2 className="text-xl">Are you a supplier?</h2><p className="mt-1 text-sm text-muted">Register your company. Suppliers are listed only after review and verification.</p><Link href="/equipment/supplier" className="btn btn-dark mt-3">Supplier registration</Link></div></div></div></div></>);
+}

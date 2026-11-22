@@ -1,0 +1,14 @@
+import { db } from "@/lib/db";
+import { meta } from "@/lib/content";
+import PageHead from "@/components/PageHead";
+import Slot from "@/components/Slot";
+export const dynamic = "force-dynamic";
+export async function generateMetadata() { return meta("/about", "About ORIVANA Health"); }
+export default async function Page() {
+  const { data } = await db().from("leaders").select("*").eq("is_published", true).order("sort_order");
+  return (<><PageHead kicker="About" title="A collaborative healthcare access and coordination initiative" intro="ORIVANA Health is envisioned as a collaborative healthcare access, coordination and support ecosystem designed to help people navigate healthcare services, connect with healthcare institutions, access educational opportunities and explore pathways for assistance." />
+    <section className="wrap grid gap-8 py-12 md:grid-cols-2"><div className="prose-oh"><h2>What we do</h2><ul><li>Help people navigate healthcare services and connect with appropriate providers.</li><li>Facilitate healthcare access for people facing financial hardship, and coordinate verified medical assistance cases.</li><li>Facilitate international medical tourism enquiries.</li><li>Support healthcare education and medical training.</li><li>Connect healthcare institutions, professionals, equipment suppliers and communities.</li><li>Encourage community health and preventive awareness.</li></ul></div>
+      <div className="prose-oh"><h2>What we are not</h2><p>ORIVANA Health is not a hospital and is not a medical diagnosis provider. Medical decisions remain with qualified and appropriately licensed healthcare professionals. We do not promise treatment, financial assistance, visas or outcomes, and we only list partners and services that have been verified.</p><p>ORIVANA Health operates within the ORIVANA Global Foundation ecosystem.</p></div></section>
+    <section className="bg-soft"><div className="wrap py-12"><p className="kicker">Leadership and guidance</p><h2 className="mt-1 text-3xl">Leadership and founding guidance</h2><p className="mt-2 max-w-3xl text-sm text-muted">The initiative is being developed under the guidance of the individuals below. Their roles are described as stated by ORIVANA; this section does not describe formal qualifications or institutional responsibilities beyond what is written.</p>
+      <div className="mt-6 grid gap-6 md:grid-cols-2">{(data || []).map((l: any) => (<article key={l.id} className="card p-5"><Slot src={l.photo_url} alt={l.name} icon="users" label={l.photo_url ? undefined : l.name} className="aspect-[4/3]" /><p className="kicker mt-4">{l.relationship}</p><h3 className="text-2xl">{l.name}</h3><p className="font-semibold text-green-dark">{l.title}</p><p className="mt-3 text-muted">{l.bio}</p></article>))}</div></div></section></>);
+}

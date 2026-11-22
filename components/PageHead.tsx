@@ -1,0 +1,3 @@
+export default function PageHead({ kicker, title, intro, children, dark = false }: { kicker?: string; title: string; intro?: string; children?: React.ReactNode; dark?: boolean }) {
+  return (<div className={dark ? "hero-bg text-white" : "border-b border-line bg-soft"}><div className="wrap py-10 md:py-14">{kicker && <p className={`kicker ${dark ? "!text-gold" : ""}`}>{kicker}</p>}<h1 className={`mt-1 max-w-3xl text-4xl md:text-5xl ${dark ? "!text-white" : ""}`}>{title}</h1>{intro && <p className={`mt-4 max-w-2xl text-lg ${dark ? "text-white/80" : "text-muted"}`}>{intro}</p>}{children}</div></div>);
+}

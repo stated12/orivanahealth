@@ -1,0 +1,8 @@
+import { notFound } from "next/navigation";
+import { db } from "@/lib/db";
+export const dynamic = "force-dynamic"; export const metadata = { title: "Certificate", robots: { index: false } };
+export default async function Page({ params }: { params: Promise<{ no: string }> }) {
+  const { no } = await params; const { data: e } = await db().from("enrollments").select("*").eq("certificate_no", no).maybeSingle(); if (!e) notFound();
+  const [{ data: c }, { data: p }] = await Promise.all([db().from("courses").select("title,certificate_enabled").eq("id", e.course_id).maybeSingle(), db().from("profiles").select("full_name,email").eq("id", e.user_id).maybeSingle()]); if (!c?.certificate_enabled) notFound();
+  return (<div className="wrap py-10"><div className="mx-auto max-w-3xl rounded-2xl border-4 border-double border-gold bg-white p-10 text-center"><p className="kicker">ORIVANA Health</p><h1 className="mt-3 text-4xl">Certificate of Completion</h1><p className="mt-6 text-muted">This certifies that</p><p className="mt-2 font-serif text-3xl text-navy">{p?.full_name || p?.email || "Learner"}</p><p className="mt-4 text-muted">has completed</p><p className="mt-2 font-serif text-2xl text-navy">{c.title}</p><p className="mt-6 text-sm text-muted">Completed on {e.completed_at ? new Date(e.completed_at).toLocaleDateString("en-IN", { dateStyle: "long" }) : ""} · Certificate no. {e.certificate_no}</p><p className="mt-6 text-xs text-muted">This is a certificate of completion for an ORIVANA Health learning programme. It is not an accredited qualification or a professional licence.</p></div><p className="mt-4 text-center text-sm text-muted no-print">Use your browser's print option to save or print this page.</p></div>);
+}
